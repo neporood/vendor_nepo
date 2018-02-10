@@ -17,20 +17,20 @@ LOCAL_PATH := $(call my-dir)
 ifneq ($(filter angler marlin sailfish,$(TARGET_DEVICE)),)
 
 include $(CLEAR_VARS)
+ifeq ($(TARGET_DEVICE),angler)
+LOCAL_MODULE := GoogleCameraNX1
+LOCAL_SRC_FILES := app/GoogleCameraNX1/GoogleCameraNX1.apk
+else
 LOCAL_MODULE := GoogleCamera
-LOCAL_MODULE_OWNER := platform
 LOCAL_SRC_FILES := app/GoogleCamera/GoogleCamera.apk
+endif
+LOCAL_MODULE_OWNER := platform
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
-ifeq ($(TARGET_DEVICE),angler)
-LOCAL_MODULE_PATH := 
-else
-DISABLE_CNM := true
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/priv-app/
-endif
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)

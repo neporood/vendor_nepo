@@ -14,4 +14,5 @@
 
 PRODUCT_PACKAGES += \
     GoogleCamera \
+    GoogleCameraNX1 \
     MixPlorer
