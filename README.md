@@ -11,4 +11,4 @@ Just clone the project or add the following to your roomservice.xml:
 
 Then, add the following call in your rom makefile (ie: lineage.mk)
 
-$(call inherit-product, vendor/nepo/my-apps.mk)
+`$(call inherit-product, vendor/nepo/my-apps.mk)`
